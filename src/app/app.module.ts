@@ -6,13 +6,15 @@ import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RecordsComponent } from './records/records.component';
+import { NoResolverComponent } from './no-resolver/no-resolver.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RecordsComponent
+    RecordsComponent,
+    NoResolverComponent
   ],
   imports: [
     BrowserModule,
