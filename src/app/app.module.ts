@@ -9,6 +9,8 @@ import { RecordsComponent } from './records/records.component';
 import { NoResolverComponent } from './no-resolver/no-resolver.component';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { NgAlertModule } from '@theo4u/ng-alert';
+import { MockHttpService } from './services/mock-http.service';
+import { RecordCompResolver } from './resolvers/record-comp-resolver';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { NgAlertModule } from '@theo4u/ng-alert';
     SlimLoadingBarModule.forRoot(),
     NgAlertModule
   ],
-  providers: [],
+  providers: [
+   MockHttpService,
+   RecordCompResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

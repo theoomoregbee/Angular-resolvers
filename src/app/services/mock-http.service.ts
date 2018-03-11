@@ -16,6 +16,18 @@ export class MockHttpService {
     }
   }
 
+  dynamicTitle(type: string, delay: number= 3000): Observable<string> {
+    return Observable.create(observer => {
+      setTimeout(() => {
+        if (type === 'resolver') {
+        observer.next('Fetched Data from Resolver');
+        } else {
+          observer.next('Fetched Title From non resolver');
+        }
+        observer.complete();
+      }, delay);
+    });
+  }
 
   request(failure: boolean, delay: number= 2000): Observable<IData[]> {
     return Observable.create(observer => {

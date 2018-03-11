@@ -47,9 +47,11 @@ export class AppComponent implements OnInit, OnDestroy  {
     // Set loading state to false in both of the below events to hide the loader in case a request fails
     if (event instanceof NavigationCancel) {
       this._loadingBar.stop();
+      this._loadingBar.complete();
     }
     if (event instanceof NavigationError) {
       this._loadingBar.stop();
+      this._loadingBar.complete();
     }
   }
 }
