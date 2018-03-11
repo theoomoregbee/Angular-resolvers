@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { RecordsComponent } from './records/records.component';
 import { NoResolverComponent } from './no-resolver/no-resolver.component';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { NgAlertModule } from '@theo4u/ng-alert';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
-    SlimLoadingBarModule.forRoot()
+    SlimLoadingBarModule.forRoot(),
+    NgAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,34 @@
-import { Component } from '@angular/core';
+import { Component,  OnInit, OnDestroy } from '@angular/core';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 import {NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
+import { IMessage, MessageType, CloseType, NgAlertService } from '@theo4u/ng-alert';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-   constructor(private _loadingBar: SlimLoadingBarService, private _router: Router) {
+export class AppComponent implements OnInit, OnDestroy  {
+   message: IMessage;
+  closeTypes = CloseType;
+  private _alertSub: Subscription;
+
+   constructor(private _loadingBar: SlimLoadingBarService, private _ngAlert: NgAlertService, private _router: Router) {
     // subscribe to our router's event here
     this._router.events.subscribe((event: Event) => {
       this.navigationInterceptor(event);
     });
+  }
+
+  ngOnInit () {
+     this._alertSub = this._ngAlert.getSource().subscribe(message => {
+      this.message = message;
+    });
+  }
+
+  ngOnDestroy () {
+    this._alertSub.unsubscribe();
   }
 
   /**
