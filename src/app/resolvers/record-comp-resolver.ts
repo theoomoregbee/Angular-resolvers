@@ -21,7 +21,6 @@ export class RecordCompResolver implements Resolve<IReturn> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IReturn> {
      const withError = route.params['with-error'] === 'true';
-    console.log('with error', typeof withError);
  return  Observable.forkJoin ([
       this._mockService.dynamicTitle('resolver'),
       this._mockService.request(withError)
