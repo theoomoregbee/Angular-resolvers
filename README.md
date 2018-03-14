@@ -5,6 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Screenshot
 ![](screenshot/resolver.gif)
 
+## Dependencies
+* [Bootstrap](https://github.com/twbs/bootstrap) : just the css was used, check [.angular-cli.json](.angular-cli.json) **styles** array where it was added to the project
+* [ng2-slim-loading-bar](https://github.com/akserg/ng2-slim-loading-bar) : Used for managing our page loader, using the inbuilt service to trigger our loader, check [app.component.ts](src/app/app.component.ts), also the [styles.css](src/styles.css) and don't forget to import it to your [app.module.ts](src/app/app.module.ts), **imports** array 
+* [ngAlert](https://github.com/theo4u/ngAlert) : Used in showing app-level alert error message, check [app.component.ts](src/app/app.component.ts), also the [styles.css](src/styles.css) and don't forget to import it to your [app.module.ts](src/app/app.module.ts), **imports** array 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
