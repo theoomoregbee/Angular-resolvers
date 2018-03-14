@@ -1,4 +1,24 @@
 <h6 class="border-bottom border-gray pb-2 mb-0">Records with out Resolver</h6>
-<div style="padding-top: 1rem">
-Record Page with out Resolver
+<div style="padding-top: 1rem" *ngIf="!loader">
+<p>{{dynamicTitle}}</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.createdAt | date}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div style="padding-top: 1rem" *ngIf="loader">
+  Loading...
 </div>
