@@ -1,7 +1,6 @@
 # Resolver
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4. For https://medium.com/@theophilus.omoregbee827/the-right-way-to-prefetch-data-for-your-angular-components-pages-1e5cce099cee
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 ## Screenshot
 ![](screenshot/resolver.gif)
 
